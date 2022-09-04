@@ -20,8 +20,7 @@ const NUMBER_LOCK:u16 = 144;
 // get state of number lock, return bool
 fn get_numlock_state() -> bool {
     unsafe {
-        let state = GetKeyState(NUMBER_LOCK as i32);
-        if state == 1 {
+        if GetKeyState(NUMBER_LOCK as i32) == 1 {
             true
         } else {
             false
